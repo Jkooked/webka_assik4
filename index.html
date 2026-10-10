@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Assignment 4 forms and validation">
+  <title>Assignment 4 Forms and Validation</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <main class="container py-5">
+    <section class="mb-5" id="part-1">
+      <div class="section-heading">
+        <h2>Basic HTML Forms</h2>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <article class="card h-100 shadow-sm">
+            <div class="card-body p-4">
+              <h3 class="h4">Simple Contact Form</h3>
+              <form id="simpleContactForm" class="plain-form">
+                <div class="mb-3">
+                  <label for="simpleName" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="simpleName" name="name" required>
+                </div>
+                <div class="mb-3">
+                  <label for="simpleEmail" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="simpleEmail" name="email" required>
+                </div>
+                <div class="mb-3">
+                  <label for="simpleMessage" class="form-label">Message</label>
+                  <textarea class="form-control" id="simpleMessage" name="message" rows="4" required></textarea>
+                </div>
+                <button class="btn btn-primary" type="submit">Send message</button>
+                <p class="form-status mt-3 mb-0" aria-live="polite"></p>
+              </form>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-lg-6">
+          <article class="card h-100 shadow-sm">
+            <div class="card-body p-4">
+              <h3 class="h4">HTML5 Validation</h3>
+              <form id="html5ContactForm" class="plain-form">
+                <div class="mb-3">
+                  <label for="validatedName" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="validatedName" name="name" minlength="2" maxlength="40" required>
+                </div>
+                <div class="mb-3">
+                  <label for="validatedEmail" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="validatedEmail" name="email" maxlength="80" required>
+                </div>
+                <div class="mb-3">
+                  <label for="validatedMessage" class="form-label">Message</label>
+                  <textarea class="form-control" id="validatedMessage" name="message" rows="4" minlength="10" maxlength="300" required></textarea>
+                  <div class="form-text">Message length: 10–300 characters.</div>
+                </div>
+                <button class="btn btn-primary" type="submit">Validate form</button>
+                <p class="form-status mt-3 mb-0" aria-live="polite"></p>
+              </form>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-5" id="part-2">
+      <div class="section-heading">
+        <h2>Bootstrap Forms</h2>
+      </div>
+      <article class="card shadow-sm">
+        <div class="card-body p-4 p-md-5">
+          <h3 class="h4">Styled Contact Form</h3>
+          <form id="bootstrapContactForm" class="needs-validation" novalidate>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="bootstrapName" class="form-label">Name</label>
+                <input type="text" class="form-control" id="bootstrapName" required placeholder="Your name">
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Name is required.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="bootstrapEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="bootstrapEmail" required placeholder="name@example.com">
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Enter a valid email address.</div>
+              </div>
+              <div class="col-12">
+                <label for="bootstrapMessage" class="form-label">Message</label>
+                <textarea class="form-control" id="bootstrapMessage" rows="5" minlength="10" required placeholder="Write your message"></textarea>
+                <div class="form-text">Please write at least 10 characters.</div>
+                <div class="valid-feedback">Message is ready to send.</div>
+                <div class="invalid-feedback">Message must contain at least 10 characters.</div>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-success" type="submit">Submit contact form</button>
+                <p class="form-status mt-3 mb-0" aria-live="polite"></p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </article>
+    </section>
+
+    <section id="part-3">
+      <div class="section-heading">
+        <h2>Advanced Form Project</h2>
+      </div>
+      <article class="card shadow-sm">
+        <div class="card-body p-4 p-md-5">
+          <h3 class="h4">Registration Form</h3>
+          <form id="registrationForm" class="needs-validation" novalidate>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="firstName" class="form-label">First name</label>
+                <input type="text" class="form-control" id="firstName" required minlength="2" maxlength="40">
+                <div class="invalid-feedback">Enter your first name.</div>
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+              <div class="col-md-6">
+                <label for="lastName" class="form-label">Last name</label>
+                <input type="text" class="form-control" id="lastName" required minlength="2" maxlength="40">
+                <div class="invalid-feedback">Enter your last name.</div>
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+              <div class="col-md-6">
+                <label for="registrationEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="registrationEmail" required>
+                <div class="invalid-feedback">Enter a valid email address.</div>
+                <div class="valid-feedback">Email is valid.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="country" class="form-label">Country</label>
+                <select class="form-select" id="country" required>
+                  <option value="" selected disabled>Choose a country</option>
+                  <option>Kazakhstan</option>
+                  <option>United States</option>
+                  <option>United Kingdom</option>
+                  <option>Germany</option>
+                  <option>South Korea</option>
+                </select>
+                <div class="invalid-feedback">Choose your country.</div>
+                <div class="valid-feedback">Country selected.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" minlength="8" required>
+                <div class="form-text">Use at least 8 characters.</div>
+                <div class="invalid-feedback">Password must contain at least 8 characters.</div>
+                <div class="valid-feedback">Password length is acceptable.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="confirmPassword" class="form-label">Confirm password</label>
+                <input type="password" class="form-control" id="confirmPassword" required>
+                <div class="invalid-feedback">Passwords must match.</div>
+                <div class="valid-feedback">Passwords match.</div>
+              </div>
+              <fieldset class="col-md-6">
+                <legend class="col-form-label pt-0">Gender</legend>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="Female" required>
+                  <label class="form-check-label" for="genderFemale">Female</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gender" id="genderMale" value="Male">
+                  <label class="form-check-label" for="genderMale">Male</label>
+                </div>
+                <div class="invalid-feedback">Select your gender.</div>
+              </fieldset>
+              <fieldset class="col-md-6">
+                <legend class="col-form-label pt-0">Hobbies</legend>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="hobbyReading" value="Reading">
+                  <label class="form-check-label" for="hobbyReading">Reading</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="hobbyMusic" value="Music">
+                  <label class="form-check-label" for="hobbyMusic">Music</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="hobbySport" value="Sport">
+                  <label class="form-check-label" for="hobbySport">Sport</label>
+                </div>
+              </fieldset>
+              <div class="col-12 d-flex gap-2 pt-2">
+                <button class="btn btn-primary" type="submit">Create account</button>
+                <button class="btn btn-outline-secondary" type="reset">Reset</button>
+              </div>
+              <div class="col-12"><p class="form-status mb-0" aria-live="polite"></p></div>
+            </div>
+          </form>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
